@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "SkError",
+	"category" : "Stick-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SkUnsupportedUrlScheme",
+	"type" : "normal"
+}

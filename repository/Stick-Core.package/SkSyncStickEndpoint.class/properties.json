@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "SkStickEndpoint",
+	"category" : "Stick-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SkSyncStickEndpoint",
+	"type" : "normal"
+}

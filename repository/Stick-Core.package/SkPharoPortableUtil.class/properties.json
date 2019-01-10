@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "SkPortableUtil",
+	"category" : "Stick-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SkPharoPortableUtil",
+	"type" : "normal"
+}

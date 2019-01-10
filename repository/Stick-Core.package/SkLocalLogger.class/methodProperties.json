@@ -1,0 +1,23 @@
+{
+	"instance" : {
+		"shouldLogWarn" : "MasashiUmezawa 1/6/2017 15:42",
+		"debug:" : "MasashiUmezawa 3/29/2017 00:37",
+		"shouldLogInfo" : "MasashiUmezawa 1/6/2017 15:42",
+		"warn:" : "MasashiUmezawa 3/29/2017 00:37",
+		"isDebugging" : "MasashiUmezawa 3/29/2017 00:07",
+		"initialize" : "MasashiUmezawa 3/29/2017 00:14",
+		"logLevel" : "MasashiUmezawa 3/29/2017 00:34",
+		"logLevel:" : "MasashiUmezawa 3/29/2017 00:07",
+		"isDebugging:" : "MasashiUmezawa 3/29/2017 00:11",
+		"info:" : "MasashiUmezawa 3/29/2017 00:37",
+		"log:tag:" : "MasashiUmezawa 3/29/2017 00:35",
+		"shouldLogError" : "MasashiUmezawa 1/6/2017 15:42",
+		"shouldLogDebug" : "MasashiUmezawa 3/29/2017 00:35",
+		"error:" : "MasashiUmezawa 3/29/2017 00:37"
+	},
+	"class" : {
+		"initialize" : "MasashiUmezawa 3/29/2017 00:40",
+		"defaultLogLevel:" : "MasashiUmezawa 1/6/2017 15:38",
+		"defaultLogLevel" : "MasashiUmezawa 3/29/2017 00:40"
+	}
+}

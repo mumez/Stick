@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Stick-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"Default",
+		"DialectSpecificClass"
+	],
+	"instvars" : [ ],
+	"name" : "SkPortableUtil",
+	"type" : "normal"
+}

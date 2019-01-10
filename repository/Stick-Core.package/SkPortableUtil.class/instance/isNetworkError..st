@@ -1,0 +1,3 @@
+testing
+isNetworkError: anError
+	^false

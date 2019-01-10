@@ -1,0 +1,3 @@
+constants
+connected
+	^1

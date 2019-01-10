@@ -1,0 +1,29 @@
+{
+	"instance" : {
+		"close" : "MasashiUmezawa 10/22/2016 22:50",
+		"sendData" : "AutoDeprecationRefactoring 7/7/2017 13:59",
+		"initialize" : "MasashiUmezawa 5/9/2016 14:48",
+		"shutdown" : "MasashiUmezawa 12/16/2016 22:39",
+		"stop" : "MasashiUmezawa 6/12/2016 23:10",
+		"onDataReceived:" : "MasashiUmezawa 6/12/2016 22:33",
+		"sendDataBy:" : "MasashiUmezawa 1/8/2019 14:48",
+		"defaultOnReceiveBlock" : "MasashiUmezawa 6/6/2016 00:02",
+		"loopSending" : "MasashiUmezawa 12/16/2016 22:41",
+		"shouldLoopReceiving" : "MasashiUmezawa 6/12/2016 22:32",
+		"onReceiveBlock" : "MasashiUmezawa 6/6/2016 00:02",
+		"onReleased" : "MasashiUmezawa 10/10/2016 22:14",
+		"releaseProcesses" : "MasashiUmezawa 10/22/2016 22:49",
+		"onConnected" : "MasashiUmezawa 5/9/2016 15:30",
+		"sendQueue" : "MasashiUmezawa 5/9/2016 14:48",
+		"shouldLoopSending" : "MasashiUmezawa 6/5/2016 00:08",
+		"onClosed" : "MasashiUmezawa 6/10/2016 15:13",
+		"release" : "MasashiUmezawa 12/16/2016 22:39",
+		"send:" : "MasashiUmezawa 5/9/2016 17:51",
+		"startReceivingProcess" : "MasashiUmezawa 12/16/2016 22:42",
+		"receiveData" : "MasashiUmezawa 3/29/2017 00:15",
+		"loopReceiving" : "MasashiUmezawa 12/16/2016 22:42",
+		"start" : "MasashiUmezawa 6/5/2016 01:18",
+		"startSendingProcess" : "MasashiUmezawa 12/16/2016 22:42"
+	},
+	"class" : { }
+}

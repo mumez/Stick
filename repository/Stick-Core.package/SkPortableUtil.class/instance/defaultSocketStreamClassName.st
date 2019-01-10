@@ -1,0 +1,3 @@
+factory
+defaultSocketStreamClassName
+	^#SocketStream

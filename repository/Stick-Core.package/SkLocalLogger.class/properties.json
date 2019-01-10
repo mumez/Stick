@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Stick-Core",
+	"classinstvars" : [
+		"defaultLogLevel"
+	],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"logLevel"
+	],
+	"name" : "SkLocalLogger",
+	"type" : "normal"
+}

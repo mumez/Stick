@@ -1,0 +1,3 @@
+accessing
+shouldLoopReceiving
+	^ self shouldLoopSending

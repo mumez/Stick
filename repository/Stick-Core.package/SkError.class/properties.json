@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "Error",
+	"category" : "Stick-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"stick",
+		"kind",
+		"otherInfo"
+	],
+	"name" : "SkError",
+	"type" : "normal"
+}

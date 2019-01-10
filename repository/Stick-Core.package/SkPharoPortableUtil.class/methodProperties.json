@@ -1,0 +1,14 @@
+{
+	"instance" : {
+		"isNetworkError:" : "MasashiUmezawa 5/8/2016 14:10",
+		"unregisterAsStartupAndShutdownHandler:" : "MasashiUmezawa 11/5/2016 12:38",
+		"stringFromUtf8Bytes:" : "MasashiUmezawa 6/11/2016 10:51",
+		"registerAsStartupAndShutdownHandler:" : "MasashiUmezawa 11/5/2016 12:38",
+		"resolveAddress:timeout:" : "MasashiUmezawa 5/5/2016 23:57",
+		"utf8BytesFromString:" : "MasashiUmezawa 6/11/2016 10:51",
+		"defaultSocketStreamClassName" : "MasashiUmezawa 5/5/2016 00:21",
+		"socketStreamToHost:port:settings:" : "MasashiUmezawa 5/6/2016 00:18",
+		"parseUrl:" : "MasashiUmezawa 11/6/2016 15:31"
+	},
+	"class" : { }
+}

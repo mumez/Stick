@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "SkStickEndpoint",
+	"category" : "Stick-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"sendQueue",
+		"sendingProcess",
+		"shouldLoopSending",
+		"receivingProcess"
+	],
+	"name" : "SkAsyncStickEndpoint",
+	"type" : "normal"
+}
