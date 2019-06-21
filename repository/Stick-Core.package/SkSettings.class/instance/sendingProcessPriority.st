@@ -1,3 +1,3 @@
 accessing
 sendingProcessPriority
-	^self at: #sendingProcessPriority ifAbsentPut: [Processor userSchedulingPriority]
+	^self at: #sendingProcessPriority ifAbsentPut: [Processor userSchedulingPriority - 5]
