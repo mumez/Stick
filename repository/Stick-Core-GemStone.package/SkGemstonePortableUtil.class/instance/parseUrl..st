@@ -2,7 +2,7 @@ actions
 parseUrl: targetUrl
   | dict url |
   dict := super parseUrl: targetUrl.
-  url := targetUrl asUrl asZnUrl.
+  url := ZnUrl fromString: targetUrl.
   dict at: #'scheme' put: url scheme.
   dict at: #'host' put: url host.
   dict at: #'port' put: url port.
