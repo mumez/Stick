@@ -1,0 +1,3 @@
+factory
+createMutex
+	^ Semaphore forMutualExclusion
