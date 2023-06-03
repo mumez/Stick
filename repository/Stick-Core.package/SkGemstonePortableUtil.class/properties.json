@@ -1,0 +1,14 @@
+{
+	"category" : "Stick-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "MasashiUmezawa 06/02/2023 08:36",
+	"instvars" : [
+		 ],
+	"name" : "SkGemstonePortableUtil",
+	"pools" : [
+		 ],
+	"super" : "SkPortableUtil",
+	"type" : "normal" }
