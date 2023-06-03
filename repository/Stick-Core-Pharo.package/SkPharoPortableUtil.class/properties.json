@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "SkPortableUtil",
-	"category" : "Stick-Core",
+	"category" : "Stick-Core-Pharo",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

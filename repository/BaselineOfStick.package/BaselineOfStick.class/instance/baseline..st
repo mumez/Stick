@@ -8,3 +8,9 @@ baseline: spec
 		spec 
 			group: 'default' with: #('Core');
 			group: 'Core' with: #('Stick-Core')].
+	spec for: #pharo do:[
+		spec package: 'Stick-Core' with: [spec includes: 'Stick-Core-Pharo'].
+	].
+	spec for: #gemstone do:[
+		spec package: 'Stick-Core' with: [spec includes: 'Stick-Core-GemStone'].
+	].
