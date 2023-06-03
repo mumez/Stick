@@ -1,0 +1,3 @@
+factory
+createMutex
+	^ Mutex new

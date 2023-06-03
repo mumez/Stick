@@ -1,3 +1,3 @@
 accessing
 reconnectMutex
-	^reconnectMutex ifNil: [ reconnectMutex := Mutex new ]
+	^reconnectMutex ifNil: [ reconnectMutex := self createMutex ]
