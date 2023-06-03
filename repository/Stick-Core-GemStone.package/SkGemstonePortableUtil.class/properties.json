@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "SkPortableUtil",
+	"category" : "Stick-Core-GemStone",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SkGemstonePortableUtil",
+	"type" : "normal"
+}
