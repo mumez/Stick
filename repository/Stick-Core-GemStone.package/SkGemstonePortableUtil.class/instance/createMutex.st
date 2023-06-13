@@ -1,0 +1,3 @@
+factory
+createMutex
+	^ TransientMutex new
