@@ -1,3 +1,0 @@
-testing
-isNetworkError: anError
-	^false

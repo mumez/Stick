@@ -1,3 +1,0 @@
-constants
-closing
-	^2

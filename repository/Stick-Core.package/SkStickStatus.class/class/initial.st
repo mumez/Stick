@@ -1,3 +1,0 @@
-constants
-initial
-	^-1

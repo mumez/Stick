@@ -14,7 +14,7 @@ An event-based socket reconnection layer for [Pharo](https://pharo.org) smalltal
 
 Metacello new
   baseline: 'Stick';
-  repository: 'github://mumez/Stick/repository';
+  repository: 'github://mumez/Stick/src';
   load.
 ```
 

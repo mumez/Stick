@@ -1,3 +1,0 @@
-constants
-connected
-	^1
