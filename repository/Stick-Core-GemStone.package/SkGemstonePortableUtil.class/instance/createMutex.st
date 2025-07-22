@@ -1,3 +1,0 @@
-factory
-createMutex
-	^ TransientMutex new

@@ -1,3 +1,0 @@
-defaults
-defaultKind
-	^self className
