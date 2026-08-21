@@ -1,3 +1,24 @@
+"
+I hold the tunable configuration for Stick connections: timeouts, reconnect behavior, and process priorities. I am typically accessed via a shared default instance, but can be instantiated per-SkStick for custom configuration.
+
+Responsibility:
+- I store settings as key/value pairs, each with a sensible default supplied lazily on first access.
+- I provide dedicated accessors for the settings Stick actually uses (timeouts, reconnect interval/ratio/max, process priorities, switching URLs, socket stream class name).
+
+Collaborators:
+- SkStick / SkStickEndpoint: read settings such as reconnectIntervalSeconds, maxReconnects, connectionTimeoutSeconds, receivingProcessPriority, sendingProcessPriority.
+- SkPortableUtil: consulted for the default socket stream class name.
+
+Public API and Key Messages:
+- #default - class-side accessor for the shared, lazily-created instance.
+- #at: / #at:ifAbsent: / #at:ifAbsentPut: / #at:put: - generic dictionary-style access, backing the specific accessors below.
+- #reconnectIntervalSeconds / #reconnectIncrementRatio / #maxReconnects - control reconnect backoff.
+- #connectionTimeoutSeconds / #nameResolveTimeoutSeconds - control connect-phase timeouts.
+- #switchingTargetUrls - the URL rotation used by SkStick>>beSwitchyWithAll.
+
+Implementation Points:
+- Each setting is stored only once accessed (#at:ifAbsentPut:), so unread settings do not appear in settingsDict until their default is requested.
+"
 Class {
 	#name : 'SkSettings',
 	#superclass : 'Object',

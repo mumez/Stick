@@ -1,3 +1,29 @@
+"
+I represent a self-reconnecting TCP-like connection (a ""sticky"" socket client). I wrap an SkStickEndpoint and expose a small event-driven API so callers can react to connect/close/data/error events without managing the underlying socket lifecycle directly.
+
+Responsibility:
+- I own the target URL and delegate actual I/O to my endpoint (created via #createEndpoint based on the URL scheme).
+- I track my own status (initial/connecting/connected/closing/closed/released/ended) via SkStickStatus.
+- I let callers register blocks for #onConnected:, #onClosed:, #onData:, #onError: and I invoke them as the corresponding events occur.
+- I support reconnection strategies: #beSticky (retry same URL after a reconnect-ended error) and #beSwitchy:/#beSwitchyWithAll (rotate through alternate URLs).
+
+Collaborators:
+- SkStickEndpoint (and subclasses SkSyncStickEndpoint/SkAsyncStickEndpoint): perform the actual socket connect/send/receive work.
+- SkSettings: supplies timeouts, reconnect intervals, and other tunables.
+- SkLocalLogger: default logger for connection lifecycle and errors.
+- SkPortableUtil: dialect-specific helpers, e.g. URL parsing and exception signaling.
+
+Public API and Key Messages:
+- #targetUrl: - class-side factory that creates and initializes an instance for a given URL.
+- #connect / #close / #reconnect / #stick - lifecycle actions.
+- #onConnected: / #onClosed: / #onData: / #onError: - register event handler blocks.
+- #beSticky / #beSwitchy: / #beSwitchyWithAll - opt into automatic reconnection behavior.
+- #send: - send raw bytes through the endpoint.
+
+Implementation Points:
+- #endpoint is lazily created from the target URL's scheme (""sync"" prefix selects SkSyncStickEndpoint, otherwise SkAsyncStickEndpoint).
+- #destroy clears the error handler before releasing, to avoid re-entrant error handling during teardown; class-side #destroyAll/#releaseAll operate on all live subinstances.
+"
 Class {
 	#name : 'SkStick',
 	#superclass : 'Object',

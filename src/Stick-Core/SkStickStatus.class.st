@@ -1,3 +1,17 @@
+"
+I am a namespace of class-side constants representing the possible lifecycle states of an SkStick (initial, connecting, connected, closing, closed, released, ended), plus a helper to render a status code as a human-readable string. I am not instantiated.
+
+Responsibility:
+- I define the canonical integer value for each SkStick status.
+- I convert a status value back to a descriptive string for printing/debugging.
+
+Collaborators:
+- SkStick: stores one of my constants in its #status instance variable and uses my values in #isConnected, #isClosed, #isEnded, etc.
+
+Public API and Key Messages:
+- #initial / #connecting / #connected / #closing / #closed / #released / #ended - the status constants.
+- #statusStringOf: - answers the string name for a given status value ('unknown' if unrecognized).
+"
 Class {
 	#name : 'SkStickStatus',
 	#superclass : 'Object',

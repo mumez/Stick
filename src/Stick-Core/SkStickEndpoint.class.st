@@ -1,3 +1,28 @@
+"
+I am the abstract base for endpoint objects that perform the actual socket I/O on behalf of an SkStick. Concrete behavior (synchronous vs. asynchronous send/receive) is provided by my subclasses.
+
+Responsibility:
+- I hold the remote host/port and the underlying socket stream, and drive connecting, closing, and reconnecting.
+- I translate low-level socket errors into Stick events by forwarding to my owning SkStick (#onConnected, #onClosed, #onErrorSignaled:) and by detecting network errors that should trigger reconnection.
+- I implement the reconnect backoff loop: incrementing trial counts, computing the next wait interval, and giving up (signaling SkReconnectEnded) once the configured maximum is exceeded.
+
+Collaborators:
+- SkStick: the owner I report lifecycle and data events to, and from which I obtain settings/logger/portableUtil.
+- SkSettings: reconnect limits, intervals, and timeouts.
+- SkReconnectEnded: signaled when reconnection attempts are exhausted.
+- SkPortableUtil: dialect-specific socket stream creation and address resolution.
+- Subclasses SkSyncStickEndpoint / SkAsyncStickEndpoint: implement #send: with synchronous vs. queued/process-based semantics.
+
+Public API and Key Messages:
+- #on: - initializes the endpoint with its owning SkStick.
+- #connect / #reconnect / #close / #release - connection lifecycle.
+- #send: - subclassResponsibility; sends bytes over the socket.
+- #onReceive: - registers the block used to read data from the socket stream.
+
+Implementation Points:
+- #reconnectMutex serializes concurrent connect/reconnect attempts.
+- #errorHandlingDo: wraps socket operations so that raised Errors are routed through #onErrorSignaled: instead of propagating.
+"
 Class {
 	#name : 'SkStickEndpoint',
 	#superclass : 'Object',
