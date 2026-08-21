@@ -22,6 +22,12 @@ SkStick class >> releaseAll [
 	self allSubInstances do: [ :e | e release ]
 ]
 
+{ #category : 'releasing' }
+SkStick class >> destroyAll [
+	<script>
+	self allSubInstances do: [ :e | e destroy ]
+]
+
 { #category : 'instance creation' }
 SkStick class >> targetUrl: targetUrl [
 	| inst |
@@ -39,7 +45,7 @@ SkStick >> beSticky [
 { #category : 'reconnecting' }
 SkStick >> beSwitchy: newTargetUrlBlock [
 	self
-		onError: [ :ex | 
+		onError: [ :ex |
 			ex isReconnectEnded
 				ifTrue: [ self switch: (newTargetUrlBlock cull: self) ] ]
 ]
@@ -56,7 +62,7 @@ SkStick >> beSwitchyWithAll: switchingUrls [
 		index := (switchingUrls indexOf: self targetUrl).
 		switchingUrls atWrap: index + 1.
 	]
-	
+
 ]
 
 { #category : 'actions' }
@@ -96,6 +102,7 @@ SkStick >> defaultLogger [
 
 { #category : 'initialize-release' }
 SkStick >> destroy [
+    self onError: [].
 	self release.
 	status := SkStickStatus ended
 ]
@@ -114,7 +121,7 @@ SkStick >> endpoint: anObject [
 SkStick >> endpointClassForScheme: schemeName [
 	schemeName ifNil: [ ^nil ].
 	(schemeName beginsWith:  'sync') ifTrue: [ ^SkSyncStickEndpoint ].
-	^SkAsyncStickEndpoint 
+	^SkAsyncStickEndpoint
 ]
 
 { #category : 'initialize-release' }
@@ -140,7 +147,7 @@ SkStick >> isConnected [
 
 { #category : 'testing' }
 SkStick >> isConnecting [
-	^self status = SkStickStatus connecting 
+	^self status = SkStickStatus connecting
 ]
 
 { #category : 'testing' }
