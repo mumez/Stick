@@ -128,7 +128,7 @@ SkStick >> defaultLogger [
 
 { #category : 'initialize-release' }
 SkStick >> destroy [
-    self onError: [].
+	self onError: [].
 	self release.
 	status := SkStickStatus ended
 ]
