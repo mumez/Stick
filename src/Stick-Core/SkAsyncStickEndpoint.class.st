@@ -1,3 +1,25 @@
+"
+I am an SkStickEndpoint that performs sending and receiving asynchronously using dedicated background processes, so callers are not blocked on socket I/O.
+
+Responsibility:
+- I run a receiving process that loops reading from the socket stream and delivers data to my SkStick via #onDataReceived:.
+- I run a sending process that loops taking byte arrays off a SharedQueue and writing them to the socket stream.
+- I start/stop these processes in step with the connection lifecycle (#onConnected starts them, #close/#onReleased stop them).
+
+Collaborators:
+- SkStick: receives data via #onDataReceived: and is released if sending fails unrecoverably.
+- SkSettings: supplies process priorities for the sending/receiving processes.
+- SharedQueue: buffers outgoing bytes between callers of #send: and the sending process.
+
+Public API and Key Messages:
+- #send: - enqueues bytes to be written by the sending process (non-blocking).
+- #start / #stop - start or request termination of the sending/receiving processes.
+- #onReceiveBlock - defaults to reading the next available object from the socket stream.
+
+Implementation Points:
+- #stop signals the sending loop to end by both clearing shouldLoopSending and pushing an empty ByteArray onto the queue (to unblock a pending #next).
+- #releaseProcesses forcibly terminates both processes; #shutdown runs this asynchronously at background priority to avoid blocking the caller.
+"
 Class {
 	#name : 'SkAsyncStickEndpoint',
 	#superclass : 'SkStickEndpoint',

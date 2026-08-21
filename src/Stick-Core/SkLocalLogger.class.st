@@ -1,3 +1,21 @@
+"
+I am a simple Transcript-based logger used as Stick's default logger. I support leveled logging (error/warn/info/debug) and am intended for local development; production deployments are expected to substitute a different logger (see method comments referencing Nagare-logger).
+
+Responsibility:
+- I filter log calls against a numeric #logLevel (0=off .. 4=debug) and write accepted entries to the Transcript with a severity tag.
+- I fall back to a class-side #defaultLogLevel when no instance-level level has been set.
+
+Collaborators:
+- SkStick / SkStickEndpoint: call #error:, #warn:, #info:, #debug: to report connection lifecycle events and failures.
+
+Public API and Key Messages:
+- #error: / #warn: / #info: / #debug: - log a record at the given severity if #logLevel permits.
+- #logLevel / #logLevel: - get/set the numeric threshold (1=error, 2=warn, 3=debug, 4=info; 0 disables logging).
+- #isDebugging / #isDebugging: - convenience toggle between defaultLogLevel and 0.
+
+Implementation Points:
+- Severity thresholds are cumulative (e.g. shouldLogInfo requires level >= 4), so raising the level enables all lower-severity categories too.
+"
 Class {
 	#name : 'SkLocalLogger',
 	#superclass : 'Object',

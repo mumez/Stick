@@ -1,3 +1,20 @@
+"
+I am the base exception class for errors signaled within Stick. I carry a symbolic ""kind"" plus arbitrary extra info, and optionally reference the SkStick instance involved, so handlers can distinguish and react to different failure categories.
+
+Responsibility:
+- I identify the category of error via #kind (defaulting to my class name if not set).
+- I hold #otherInfo, a Dictionary for arbitrary diagnostic details.
+- I optionally reference the SkStick that was active when I was signaled.
+
+Collaborators:
+- SkStick: errors are routed to its #onErrorBlock via #onErrorSignaled:.
+- Subclasses (e.g. SkReconnectEnded, SkUnsupportedUrlScheme): represent specific error conditions.
+
+Public API and Key Messages:
+- #kind: / #kind: otherInfo: - class-side factories for creating an instance with a given kind.
+- #stick / #stick: - access the associated SkStick.
+- #otherInfo - lazily initialized Dictionary of extra details.
+"
 Class {
 	#name : 'SkError',
 	#superclass : 'Error',
